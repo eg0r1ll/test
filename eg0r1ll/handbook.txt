@@ -36,3 +36,16 @@ set shiftwidth=4
 set smarttab
 set expandtab
 
+block commenting:
+1) esc
+2) ctrl + v
+3) h/j/k/l - выделяем текст
+4) shift + i
+5) вводим символ комментария (# or //)
+6) esc
+
+
+
+
+
+
