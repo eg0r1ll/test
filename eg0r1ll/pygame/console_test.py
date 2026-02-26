@@ -1,5 +1,7 @@
 import pygame
 import random
+import tkinter_console_test
+
 
 pygame.init()
 
@@ -21,7 +23,9 @@ console_log = []
 
 game_status = True
 while game_status:
-    
+
+    pygame.display.update()
+
     if not console_active: # когда консоль закрыта можно менять экран
         screen.fill("gray")
 
@@ -50,9 +54,9 @@ while game_status:
                     if console_text == "clear":
                         console_log = []
                     elif console_text == "quit" or console_text == "exit":
-                        console_log = []
-                        console_text = ""
+                        pygame.quit()
                         console_active = False
+                        game_status = False
                     else:
                         console_log.append(console_text)
                     console_text = ""
@@ -79,7 +83,7 @@ while game_status:
         screen.blit(input_surf, (10, 160))
         
 
-    pygame.display.update()
+    
 
     clock.tick(60)  
 

@@ -1,6 +1,7 @@
 import pygame
 import random
 
+
 pygame.init() # начало игры
 screen = pygame.display.set_mode((1920, 1080)) # создание экрана
 pygame.display.set_caption("test_game") # создание описание окна
