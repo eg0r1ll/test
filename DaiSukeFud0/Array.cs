@@ -14,7 +14,7 @@ static int Sum(int[] array)
         result += i;
     return result;
 }
-static double Coculation(double num1, double num2, char symbol)
+static double Caculator(double num1, double num2, char symbol)
 {
     double result = 0;
     for (int i = 0; true; i++)
@@ -47,6 +47,20 @@ static double Coculation(double num1, double num2, char symbol)
     }
     return result;
 }
+static void Сomparing_numbers(int num)
+{
+    if (num <= 10 && num >= 1)
+    {
+        if (num % 2 == 0 && num != 0)
+            Console.WriteLine($"Число {num} - четное");
+        else if (num % 2 == 1)
+            Console.WriteLine($"Число {num} - нечетное");
+    }
+    else
+    {
+        Console.WriteLine("Неверное число");
+    }
+}
 static void Main(string[] args)
 {
     Filling_Array(array1);
@@ -65,8 +79,7 @@ static void Main(string[] args)
                 double num2 = double.Parse(Console.ReadLine());
                 Console.Write("Выбирете операцию '-' '+' '/' '*': ");
                 char symbol = char.Parse(Console.ReadLine());
-                Console.WriteLine(Coculation(num1, num2, symbol));
-                Console.Clear();
+                Console.WriteLine(Caculator(num1, num2, symbol));
                 Console.WriteLine("Для выхода нажмите Escape");
                 Console.WriteLine("Чтобы продолжить нажмите Enter");
                 ConsoleKey key = Console.ReadKey().Key;
@@ -77,17 +90,12 @@ static void Main(string[] args)
             {
                 Console.WriteLine("Введите число 1-10");
                 int num = int.Parse(Console.ReadLine());
-                if (num % 2 == 0 && num != 0)
-                {
-                    Console.WriteLine($"Число {num} - четное"); break;
-                }
-                else if (num == 0)
-                {
-                    Console.WriteLine("Введите число 1-10"); break;
-                }
-                else if (num % 2 == 1)
-                    Console.WriteLine($"Число {num} - нечетное");
-                break;
+                Сomparing_numbers(num);
+                Console.WriteLine("Для выхода нажмите Escape");
+                Console.WriteLine("Чтобы продолжить нажмите Enter");
+                ConsoleKey key = Console.ReadKey().Key;
+                if (key == ConsoleKey.Escape)
+                    break;
             }
         }
         catch (Exception)
